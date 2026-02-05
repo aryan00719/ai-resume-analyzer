@@ -3,8 +3,9 @@ import pdfplumber
 import os
 from utils.resume_parser import extract_skills, extract_sections, clean_text
 from utils.jd_parser import parse_job_description
-from utils.similarity import match_skills
+from utils.similarity import weighted_match_skills
 from utils.skill_normalizer import normalize_skills, infer_high_level_skills
+from utils.semantic_matcher import semantic_skill_match
 
 app = Flask(__name__)
 
@@ -66,11 +67,13 @@ def analyze_resume():
 
     jd_skills = parse_job_description(jd_text)
 
-    analysis = match_skills(resume_skills, jd_skills)
+    analysis = weighted_match_skills(resume_skills, jd_skills)
+    semantic_score = semantic_skill_match(" ".join(resume_skills), jd_text)
 
     return jsonify({
         "jd_skills": jd_skills,
-        "analysis": analysis
+        "analysis": analysis,
+        "semantic_score": semantic_score
     })
 
 if __name__ == "__main__":
