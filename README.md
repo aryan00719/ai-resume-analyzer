@@ -1,8 +1,8 @@
-AI Resume Analyzer & Job Match Platform
+# AI Resume Analyzer & Job Match Platform
 
 A full-stack web application that analyzes resumes and matches them against job descriptions using NLP techniques, skill normalization, and rule-based inference. The system provides an interpretable match score along with matched and missing skills to help candidates understand their job fit.
 
-⸻
+---
 
 🚀 Features
 • 📄 Upload and parse PDF resumes
@@ -14,7 +14,7 @@ A full-stack web application that analyzes resumes and matches them against job 
 • ❌ Identify missing skills
 • 🎨 Clean, professional UI with progress bar and skill tags
 
-⸻
+---
 
 🏗️ Tech Stack
 
@@ -33,7 +33,7 @@ NLP & Processing
 • Rule-based skill inference
 • Set-based matching logic
 
-⸻
+---
 
 ⚙️ How It Works (High Level) 1. Resume Upload
 • User uploads a PDF resume
@@ -50,7 +50,7 @@ NLP & Processing
 • Matched skills shown in green
 • Missing skills shown in red
 
-⸻
+---
 
 📂 Project Structure
 
@@ -77,7 +77,7 @@ ai-resume-analyzer/
 ▶️ How to Run Locally
 
 1️⃣ Clone the repository
-git clone https://github.com/your-username/ai-resume-analyzer.git
+git clone https://github.com/aryan00719/ai-resume-analyzer.git
 cd ai-resume-analyzer
 
 2️⃣ Install dependencies
@@ -89,7 +89,7 @@ python3 app.py
 4️⃣ Open in browser
 http://127.0.0.1:5000
 
-⸻
+---
 
 🧪 Example Output
 • Match Score: 60–90% (depends on JD)
@@ -98,14 +98,14 @@ http://127.0.0.1:5000
 
 The system intentionally produces conservative and explainable results rather than over-inflated scores.
 
-⸻
+---
 
 🎯 Design Decisions
 • Rule-based inference is used instead of black-box AI to ensure explainability
 • Match score is based on job description requirements, not resume length
 • Skill vocabulary is deliberately extensible for future improvement
 
-⸻
+---
 
 🔮 Future Improvements
 • Semantic matching using sentence embeddings
@@ -114,7 +114,7 @@ The system intentionally produces conservative and explainable results rather th
 • Resume report export (PDF)
 • Authentication and saved analyses
 
-⸻
+---
 
 🎤 Interview Talking Points
 • Full-stack client–server architecture
@@ -123,7 +123,7 @@ The system intentionally produces conservative and explainable results rather th
 • Backend-driven business logic
 • Realistic ATS-style matching system
 
-⸻
+---
 
 📌 Author
 
