@@ -77,7 +77,7 @@ ai-resume-analyzer/
 ▶️ How to Run Locally
 
 1️⃣ Clone the repository
-git clone https://github.com/your-username/ai-resume-analyzer.git
+git clone https://github.com/aryan00719/ai-resume-analyzer.git
 cd ai-resume-analyzer
 
 2️⃣ Install dependencies
