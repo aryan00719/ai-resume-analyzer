@@ -1,92 +1,105 @@
 # Resume Analyzer & Job Matching System
 
-A full-stack, AI-powered web application that analyzes resumes and matches them against job descriptions using NLP techniques, semantic embeddings, skill normalization, and rule-based inference. The tool provides clear, interpretable scores along with separated missing skills and actionable suggestions.
+A full-stack web application that evaluates how well a resume matches a job description using both ATS-style keyword matching and semantic similarity.
+
+🔗 Live Demo: https://resume-analyzer-and-job-matching-system.onrender.com
+
+---
 
 ## 🚀 Features
 
-- **📄 Document Parsing:** Upload and automatically parse PDF resumes.
-- **🧠 Intelligent Extraction:** Extract technical skills from unstructured text and map them to standard terms (e.g., `ML` → `Machine Learning`).
-- **🔗 Semantic Matching:** Compute a holistic Semantic Match Score by embedding the entire resume against the job description.
-- **🎯 Weighted ATS Score:** Calculates deterministic match percentages based on required and good-to-have job skills.
-- **✅ Actionable Visualizations:** Clearly distinguishes between matched, required missing, and optional missing skills.
-- **💡 Smart Suggestions:** Generates immediate, rule-based suggestions on how to improve your match capability based on critical missing requirements.
-- **🎨 Modern UX:** Clean, card-based interface with dual progress tracking and intuitive states.
+- Resume PDF parsing and text extraction
+- Skill extraction and normalization
+- Weighted ATS scoring (required vs good-to-have skills)
+- Semantic similarity for contextual relevance
+- Skill gap identification with suggestions
+- Clean and interactive UI with dual score display
 
-## 🏗️ Tech Stack
+---
 
-**Frontend**
-- HTML5, Vanilla JavaScript, CSS3
-- Responsive, modern card-based UI without heavy frameworks
+## 🧠 How It Works
 
-**Backend**
-- Python, Flask
-- `pdfplumber` for PDF text extraction
+1. **Resume Upload**
+   - Extract text from PDF using `pdfplumber`
+   - Identify and normalize technical skills
 
-**NLP & Data Processing**
-- Set-based deterministic matching logic
-- Contextual/Rule-based skill inference
-- Semantic string matching
-- Keyword extraction processing pipelines
+2. **Job Description Parsing**
+   - Categorize skills into:
+     - Required
+     - Good-to-have
 
-## ⚙️ How It Works (Pipeline)
+3. **Scoring**
+   - **ATS Score:** Rule-based matching with weighted importance
+   - **Semantic Score:** Measures contextual similarity between resume and job description
 
-1. **Extraction Pipeline (Upload Phase)**
-   - User uploads a PDF resume.
-   - Text is scraped locally using `pdfplumber`.
-   - The NLP pipeline identifies, cleans, and normalizes skill entities.
-   - Implicit skills are algorithmically inferred and appended.
+4. **Output**
+   - Matched skills
+   - Missing required skills
+   - Missing optional skills
+   - Suggestions for improvement
 
-2. **Analysis Pipeline (Job Match Phase)**
-   - The user inputs a target Job Description.
-   - The platform categorizes JD requirements into `Required` vs `Good-to-Have`.
-   - **ATS Scoring Engine:** Intersects normalized user skills against categorized target skills with differential weighting.
-   - **Semantic Scoring Engine:** Feeds the normalized text body into the semantic similarity engine.
+---
 
-3. **Presentation Layer**
-   - Returns both the rigid ATS score and flexible Semantic score visually.
-   - Outputs suggestions directly correlated to critical gaps in the `Required` pool.
+## 🛠 Tech Stack
+
+- **Backend:** Flask (Python)
+- **Frontend:** HTML, CSS, JavaScript
+- **NLP:** sentence-transformers
+- **PDF Parsing:** pdfplumber
+- **Deployment:** Render
+
+---
+
+## 📊 Example Output
+
+ATS Match Score: 73%
+Semantic Match Score: 50%
+
+Missing Skills:
+	•	Django
+	•	NLP
+
+> Semantic score reflects contextual relevance, not just keyword matching.
+
+---
 
 ## 📸 Screenshots
 
-![Main Dashboard Placeholder](https://via.placeholder.com/800x450.png?text=Main+Dashboard+UI)
-![Analysis Results Placeholder](https://via.placeholder.com/800x450.png?text=Dual+Score+%26+Suggestions+View)
+### Home Interface
+![Home](assets/home.png)
 
-## ▶️ Getting Started (Local Setup)
+### Match Analysis Result
+![Result](assets/result.png)
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/aryan00719/ai-resume-analyzer.git
-   cd ai-resume-analyzer
-   ```
+---
 
-2. **Set up the environment (Optional but Recommended)**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
+## ▶️ Local Setup
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+git clone https://github.com/aryan00719/resume-analyzer-job-matcher.git
+cd resume-analyzer-job-matcher
 
-4. **Run the Flask application**
-   ```bash
-   python app.py
-   ```
+python3 -m venv venv
+source venv/bin/activate
 
-5. **Access the application**
-   Open your browser and navigate to `http://127.0.0.1:5000`
+pip install -r requirements.txt
+python app.py
+```
 
-## 🔮 Future Improvements
+Open: http://127.0.0.1:5000
 
-- Add direct resume report export functionality (PDF).
-- Introduce authentication to save and compare historical resume versions.
-- Enhance the semantic matcher using local transformer models instead of lightweight heuristics.
-- Add real-time JD suggestions dynamically tracking public job boards.
+⸻
 
-## 📌 Author
+🔮 Future Improvements
+	•	Resume improvement suggestions
+	•	Job scraping integration
+	•	Enhanced skill extraction using advanced NLP
+	•	Performance optimization for large resumes
 
-**Aryan Mishra**  
-Computer Science Undergraduate  
-*Passionate about AI, Backend, and robust Full-Stack Architecture.*
+⸻
+
+👨‍💻 Author
+
+Aryan Mishra
+Computer Science Undergraduate
+Interested in Backend Development, NLP, and Full-Stack Systems
