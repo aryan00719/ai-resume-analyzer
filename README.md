@@ -1,4 +1,4 @@
-# AI Resume Analyzer & Job Match Platform
+# Resume Analyzer & Job Matching System
 
 A full-stack, AI-powered web application that analyzes resumes and matches them against job descriptions using NLP techniques, semantic embeddings, skill normalization, and rule-based inference. The tool provides clear, interpretable scores along with separated missing skills and actionable suggestions.
 
