@@ -28,5 +28,6 @@ def weighted_match_skills(resume_skills, jd_skills, required_weight=0.8, good_to
     return {
         "score": final_score,
         "matched_skills": list(required_matched.union(good_to_have_matched)),
-        "missing_skills": list(missing_skills)
+        "missing_required": list(required - required_matched),
+        "missing_good_to_have": list(good_to_have - good_to_have_matched)
     }

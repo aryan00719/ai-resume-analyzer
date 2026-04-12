@@ -3,47 +3,88 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Resume Analyzer</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <h1>AI Resume Analyzer</h1>
-        <p class="subtitle">Match your resume against a job description using NLP</p>
+        <header class="header">
+            <h1>AI Resume Analyzer</h1>
+            <p class="subtitle">Match your resume against a job description using NLP</p>
+        </header>
 
-        <!-- Resume Upload Card -->
-        <div class="card">
-            <h2>Upload Resume</h2>
-            <form id="uploadForm">
-                <input type="file" id="resume" accept=".pdf" required />
-                <button type="submit">Upload & Analyze</button>
-            </form>
-        </div>
+        <div class="grid">
+            <!-- Left Column: Inputs -->
+            <div class="input-section">
+                <!-- Resume Upload Card -->
+                <div class="card">
+                    <h2>1. Upload Resume</h2>
+                    <form id="uploadForm">
+                        <div class="file-upload">
+                            <input type="file" id="resume" accept=".pdf" required />
+                        </div>
+                        <button type="submit" id="uploadBtn">Upload & Process</button>
+                    </form>
+                    <div id="uploadStatus" class="status-msg hidden">Processing Resume...</div>
+                </div>
 
-        <!-- Job Description Card -->
-        <div class="card">
-            <h2>Job Description</h2>
-            <textarea id="jd" placeholder="Paste job description here..."></textarea>
-            <button id="analyzeBtn">Analyze Match</button>
-        </div>
-
-        <!-- Result Card -->
-        <div class="card">
-            <h2>Match Result</h2>
-
-            <div class="progress-container">
-                <div id="progressBar">0%</div>
+                <!-- Job Description Card -->
+                <div class="card">
+                    <h2>2. Job Description</h2>
+                    <textarea id="jd" placeholder="Paste the job description here..."></textarea>
+                    <button id="analyzeBtn">Analyze Match</button>
+                    <div id="analyzeStatus" class="status-msg hidden">Analyzing...</div>
+                </div>
             </div>
 
-            <div class="skills-section">
-                <h3>Matched Skills</h3>
-                <div id="matchedSkills" class="skills"></div>
-            </div>
+            <!-- Right Column: Results -->
+            <div class="result-section">
+                <div class="card result-card" id="resultCard">
+                    <h2>Analysis Results</h2>
 
-            <div class="skills-section">
-                <h3>Missing Skills</h3>
-                <div id="missingSkills" class="skills"></div>
+                    <div class="scores-container">
+                        <div class="score-box">
+                            <label>ATS Match Score</label>
+                            <div class="progress-bar-bg">
+                                <div id="atsProgressBar" class="progress-fill ats-fill">0%</div>
+                            </div>
+                        </div>
+
+                        <div class="score-box">
+                            <label>Semantic Match Score</label>
+                            <div class="progress-bar-bg">
+                                <div id="semanticProgressBar" class="progress-fill semantic-fill">0%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 0.85rem; color: #64748b; margin-top: -15px; margin-bottom: 25px; font-style: italic;">
+                        * Semantic score reflects contextual relevance, not just keyword matching.
+                    </p>
+
+                    <div id="suggestionsBox" class="suggestions-box hidden">
+                        <h3>💡 Suggestions</h3>
+                        <p id="suggestionsText"></p>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Matched Skills</h3>
+                        <div id="matchedSkills" class="skills"></div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Missing Required Skills</h3>
+                        <div id="missingRequiredSkills" class="skills"></div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Missing Good-to-Have Skills</h3>
+                        <div id="missingGoodSkills" class="skills"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
