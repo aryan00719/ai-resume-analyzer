@@ -88,18 +88,19 @@ python app.py
 
 Open: http://127.0.0.1:5000
 
-⸻
+---
 
-🔮 Future Improvements\
-	•	Resume improvement suggestions\
-	•	Job scraping integration\
-	•	Enhanced skill extraction using advanced NLP\
-	•	Performance optimization for large resumes
+## 🔮 Future Improvements
 
-⸻
+- Resume improvement suggestions
+- Job scraping integration
+- Enhanced skill extraction using advanced NLP
+- Performance optimization for large resumes
 
-👨‍💻 Author
+---
 
-Aryan Mishra\
-Computer Science Undergraduate\
+## 👨‍💻 Author
+
+**Aryan Mishra**  
+Computer Science Undergraduate  
 Interested in Backend Development, NLP, and Full-Stack Systems
