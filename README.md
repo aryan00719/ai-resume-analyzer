@@ -52,12 +52,12 @@ A full-stack web application that evaluates how well a resume matches a job desc
 
 ## 📊 Example Output
 
-ATS Match Score: 73%
-Semantic Match Score: 50%
+ATS Match Score: 76%\
+Semantic Match Score: 49.8%
 
-Missing Skills:
-	•	Django
-	•	NLP
+Missing Skills:\
+	•	Django\
+	•	Docker
 
 > Semantic score reflects contextual relevance, not just keyword matching.
 
@@ -90,16 +90,16 @@ Open: http://127.0.0.1:5000
 
 ⸻
 
-🔮 Future Improvements
-	•	Resume improvement suggestions
-	•	Job scraping integration
-	•	Enhanced skill extraction using advanced NLP
+🔮 Future Improvements\
+	•	Resume improvement suggestions\
+	•	Job scraping integration\
+	•	Enhanced skill extraction using advanced NLP\
 	•	Performance optimization for large resumes
 
 ⸻
 
 👨‍💻 Author
 
-Aryan Mishra
-Computer Science Undergraduate
+Aryan Mishra\
+Computer Science Undergraduate\
 Interested in Backend Development, NLP, and Full-Stack Systems
